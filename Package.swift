@@ -4,18 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "${NAME}",
+    name: "NSAttributedStringHelpers",
     platforms: [
         .iOS(.v13),
+        .tvOS(.v13)
     ],
     products: [
-        .library(name: "${NAME}", targets: ["${NAME}"]),
+        .library(name: "NSAttributedStringHelpers", targets: ["NSAttributedStringHelpers"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "${NAME}",
+            name: "NSAttributedStringHelpers",
             dependencies: [
             ]
         )
