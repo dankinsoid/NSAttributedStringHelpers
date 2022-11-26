@@ -40,6 +40,18 @@ extension NSAttributedString: ExpressibleByStringInterpolation {
             appendInterpolation(value, attributes)
         }
         
+        public mutating func appendInterpolation(_ value: Any, _ color: UIColor) {
+            appendInterpolation(value, .foregroundColor(color))
+        }
+        
+        public mutating func appendInterpolation(_ value: Any, _ font: UIFont) {
+            appendInterpolation(value, .font(font))
+        }
+        
+        public mutating func appendInterpolation(_ value: UIImage) {
+            appendInterpolation(NSAttributedString(attachment: NSTextAttachment(image: value)))
+        }
+        
         private mutating func appendInterpolation(_ value: some NSAttributedStringConvertible, _ attributes: [Attribute]) {
             let string = value.asAttributedString
             string.addAttributes(attributes)

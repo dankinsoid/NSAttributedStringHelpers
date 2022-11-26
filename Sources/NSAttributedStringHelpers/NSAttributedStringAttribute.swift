@@ -180,4 +180,8 @@ extension NSAttributedString.Attribute {
             other.reduce(first.union(second)) { $0.union($1) }
         )
     }
+    
+    public static func attachment(image: UIImage) -> NSAttributedString.Attribute {
+        .attachment(NSTextAttachment(image: image))
+    }
 }

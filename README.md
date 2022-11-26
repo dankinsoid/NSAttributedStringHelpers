@@ -27,11 +27,14 @@ NSAttributedString {
             .underline(.byWord, color: .systemBlue)
     }
     .font(.boldSystemFont(ofSize: 16))
+    
+    UIImage(named: "attachment image")!
 }
     
 let literalAttributed: NSAttributedString = """
-Some \("attributed", .foregroundColor(.systemRed)) literal text
+Some \("attributed", UIColor.systemRed) literal text
 Some values \(12, .underline(.byWord), .ligature).
+Attachment \(UIImage(named: "attachment image")!)
 """
 ```
 
@@ -48,7 +51,7 @@ import PackageDescription
 let package = Package(
   name: "SomeProject",
   dependencies: [
-    .package(url: "https://github.com/dankinsoid/NSAttributedStringHelpers.git", from: "1.1.0")
+    .package(url: "https://github.com/dankinsoid/NSAttributedStringHelpers.git", from: "1.2.0")
   ],
   targets: [
     .target(name: "SomeProject", dependencies: ["NSAttributedStringHelpers"])

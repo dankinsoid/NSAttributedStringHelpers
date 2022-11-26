@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 @resultBuilder
 public enum NSAttributedStringBuilder {
@@ -39,6 +39,11 @@ public enum NSAttributedStringBuilder {
     @inlinable
     public static func buildExpression(_ expression: some NSAttributedStringConvertible) -> NSMutableAttributedString {
         expression.asAttributedString
+    }
+    
+    @inlinable
+    public static func buildExpression(_ expression: UIImage) -> NSMutableAttributedString {
+        NSMutableAttributedString(attachment: NSTextAttachment(image: expression))
     }
 }
 
